@@ -9,7 +9,9 @@
 
 <style>
   :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
     font-size: 14px;
     color: #333;
     box-sizing: border-box;
@@ -39,7 +41,7 @@
     margin: -8px;
     display: flex;
     align-items: center;
-    background-color: #451B58;
+    background-color: #451b58;
     color: white;
     font-weight: 600;
   }
@@ -237,18 +239,19 @@
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
-    border: 1px solid rgba(27, 31, 35, .2);
+    border: 1px solid rgba(27, 31, 35, 0.2);
     border-radius: 3px;
     background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
     margin-left: 4px;
     font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+      sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   }
 
   .github-star-badge:hover {
     background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
-    border-color: rgba(27, 31, 35, .35);
-    background-position: -.5em;
+    border-color: rgba(27, 31, 35, 0.35);
+    background-position: -0.5em;
   }
 
   .github-star-badge .material-icons {
@@ -265,11 +268,9 @@
     width: 1920px;
   }
 
-
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
-
-    .card-container>*:not(.circle-link),
+    .card-container > *:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -306,79 +307,134 @@
 </div>
 
 <div class="content" role="main">
-
   <div>
-    <h5>Chào bạn, bạn vui lòng điền các thông tin vào các mục ở bên dưới sau đó kiểm tra email để nhận link download phần
-      mềm Quản lý Logistic – LOCY kèm sách hướng dẫn sử dụng.</h5>
+    <h5>
+      Chào bạn, bạn vui lòng điền các thông tin vào các mục ở bên dưới sau đó
+      kiểm tra email để nhận link download phần mềm Quản lý Logistic – LOCY kèm
+      sách hướng dẫn sử dụng.
+    </h5>
   </div>
 
   <div class="form-group width-100 padding-top">
     <label class="bold">Thông tin công ty</label>
     <div class="padding-horizontal">
       <div>
-        <input type="text" class="form-control" placeholder="Tên công ty" [(ngModel)]="companyName">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Tên công ty"
+          [(ngModel)]="companyName"
+        />
       </div>
       <div class="padding8-top">
-        <input type="text" class="form-control" placeholder="Tên viết tắt" [(ngModel)]="companyShortName">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Tên viết tắt"
+          [(ngModel)]="companyShortName"
+        />
       </div>
       <div class="padding8-top">
-        <input type="text" class="form-control" placeholder="Email công ty" [(ngModel)]="companyEmail">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Email công ty"
+          [(ngModel)]="companyEmail"
+        />
       </div>
       <div class="padding8-top">
-        <input type="text" class="form-control" placeholder="Địa chỉ công ty" [(ngModel)]="companyAddress">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Địa chỉ công ty"
+          [(ngModel)]="companyAddress"
+        />
       </div>
     </div>
   </div>
 
-  <div class="form-group  width-100 padding-top">
+  <div class="form-group width-100 padding-top">
     <label class="bold">Thông tin liên hệ</label>
     <div class="padding-horizontal">
       <div>
-        <input type="text" class="form-control" placeholder="Tên người liên hệ" [(ngModel)]="contactName">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Tên người liên hệ"
+          [(ngModel)]="contactName"
+        />
       </div>
       <div class="padding8-top">
-        <input type="text" class="form-control" placeholder="Số điện thoại người liên hệ" [(ngModel)]="contactPhone">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Số điện thoại người liên hệ"
+          [(ngModel)]="contactPhone"
+        />
+      </div>
+      <div class="padding8-top">
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="nameFile">
+          <mat-radio-button value="Locy-FORWARDER">FORWARDER</mat-radio-button>
+          <mat-radio-button value="Locy-FORWARDERTRANS">FORWARDERTRANS</mat-radio-button>
+          <mat-radio-button value="Locy-LOCAPORT">LOCAPORT</mat-radio-button>
+          <mat-radio-button value="Locy-TRANSPORT">TRANSPORT</mat-radio-button>
+        </mat-radio-group>
       </div>
     </div>
   </div>
 
   <div class="padding-top">
-    <re-captcha (resolved)="resolved($event)" siteKey="6Lcr19kUAAAAACpEB-DJcanT_hBcp5MV4THJ_rnP"></re-captcha>
+    <re-captcha
+      (resolved)="resolved($event)"
+      siteKey="6Lcr19kUAAAAACpEB-DJcanT_hBcp5MV4THJ_rnP"
+    ></re-captcha>
   </div>
 
   <div class="padding-top">
-    <button [disabled]="!canSubmit" type="submit" class="btn"
-      style="background-color: #451B58; color: white; border-color: #451B58;" (click)="onClickSubmit()">Submit</button>
+    <button
+      [disabled]="!canSubmit"
+      type="submit"
+      class="btn"
+      style="background-color: #451b58; color: white; border-color: #451b58"
+      (click)="onClickSubmit()"
+    >
+      Submit
+    </button>
   </div>
 
-
   <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
-
-
 
   <!-- Footer -->
   <footer>
     <a href="http://namanphu.com.vn/" target="_blank" rel="noopener">
-      <span style="color: black;">Nam An Phú&nbsp;</span>
-      TECHNOLOGIES JSC.</a>
+      <span style="color: black">Nam An Phú&nbsp;</span>
+      TECHNOLOGIES JSC.</a
+    >
   </footer>
   <div>info.namanphu@gmail.com</div>
   <div>024 3550 1618 - 024 3550 1919</div>
 
-  <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
-    viewBox="0 0 2611.084 485.677">
-    <path id="Path_39" data-name="Path 39"
+  <svg
+    id="clouds"
+    alt="Gray Clouds Background"
+    xmlns="http://www.w3.org/2000/svg"
+    width="2611.084"
+    height="485.677"
+    viewBox="0 0 2611.084 485.677"
+  >
+    <path
+      id="Path_39"
+      data-name="Path 39"
       d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z"
-      transform="translate(142.69 -634.312)" fill="#eee" />
+      transform="translate(142.69 -634.312)"
+      fill="#eee"
+    />
   </svg>
-
 </div>
 
-
-<div class="my-container" style="text-align: center;">
+<div class="my-container" style="text-align: center">
   <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }">
   </ngx-loading>
-
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -388,7 +444,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
 
 <router-outlet></router-outlet>
