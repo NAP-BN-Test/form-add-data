@@ -17,10 +17,13 @@ export class AppComponent implements OnInit {
   companyAddress = "";
   contactName = "";
   contactPhone = "";
+  isFacebook = false;
+  isWebsite = false;
+  isFriends = false;
   nameFile = "Locy-FORWARDER";
+  totalUser = "5user";
 
   canSubmit = false;
-
   loading = false;
 
   constructor(public toastService: ToastService, public http: Http) {}
@@ -29,7 +32,6 @@ export class AppComponent implements OnInit {
 
   onClickSubmit() {
     if (localStorage.getItem("register") == null) {
-      this.loading = true;
       if (
         this.companyName.trim() != "" &&
         this.companyShortName.trim() != "" &&
@@ -45,6 +47,10 @@ export class AppComponent implements OnInit {
           contactName: this.contactName,
           contactPhone: this.contactPhone,
           nameFile: this.nameFile,
+          isFacebook: this.isFacebook,
+          isWebsite: this.isWebsite,
+          isFriends: this.isFriends,
+          totalUser: this.totalUser,
         };
         this.executeRequest(
           body,
@@ -66,6 +72,10 @@ export class AppComponent implements OnInit {
               this.contactName = "";
               this.contactPhone = "";
               this.nameFile = "Locy-FORWARDER";
+              this.isFacebook = false;
+              this.isWebsite = false;
+              this.isFriends = false;
+              this.totalUser = "5user";
 
               this.loading = false;
 
@@ -82,6 +92,7 @@ export class AppComponent implements OnInit {
           }
         });
       } else {
+        this.loading = false;
         this.toastService.show("Bạn chưa nhập đủ thông tin!", {
           classname: "bg-danger text-light",
         });
@@ -92,6 +103,7 @@ export class AppComponent implements OnInit {
         "Bạn đã đăng ký sử dụng phần mềm, vui lòng kiểm tra email để nhận được thông tin!",
         { classname: "bg-warning text-light" }
       );
+      this.loading = false;
       grecaptcha.reset();
     }
   }

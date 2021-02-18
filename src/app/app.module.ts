@@ -13,7 +13,8 @@ import { RecaptchaModule } from "ng-recaptcha";
 
 import { NgxLoadingModule } from "ngx-loading";
 import { MatRadioModule } from "@angular/material/radio";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [AppComponent, ToastsContainer],
@@ -27,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatRadioModule,
     NgxLoadingModule.forRoot({}),
     BrowserAnimationsModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
