@@ -136,6 +136,14 @@ export class AppComponent implements OnInit {
       password: password,
       key: this.genKey(),
       secretKey: "c74449f1f663f1d3037152dd768d8f89",
+      companyAddress: this.companyAddress,
+      contactName: this.contactName,
+      contactPhone: this.contactPhone,
+      nameFile: this.nameFile,
+      isFacebook: this.isFacebook,
+      isWebsite: this.isWebsite,
+      isFriends: this.isFriends,
+      totalUser: this.totalUser,
     };
     console.log(body);
 

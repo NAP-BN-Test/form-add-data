@@ -375,7 +375,11 @@
         />
       </div>
       <div class="padding8-top">
-        <mat-radio-group aria-label="Select an option" [(ngModel)]="nameFile">
+        <mat-radio-group
+          aria-label="Select an option"
+          [(ngModel)]="nameFile"
+          class="d-flex flex-column"
+        >
           <mat-radio-button value="Locy-FORWARDER">
             Dịch vụ Forwarder
           </mat-radio-button>
@@ -395,7 +399,7 @@
 
   <div class="form-group width-100 padding-top">
     <label class="bold">Biết đến LOCY qua kênh thông tin nào?</label>
-    <section class="d-flex flex-column">
+    <section class="d-flex flex-column padding-horizontal">
       <mat-checkbox [(ngModel)]="isFacebook"> Fanpage – Facebook </mat-checkbox>
       <mat-checkbox [(ngModel)]="isWebsite"> Website </mat-checkbox>
       <mat-checkbox [(ngModel)]="isFriends"> Bạn bè giới thiệu </mat-checkbox>
@@ -404,7 +408,7 @@
 
   <div class="form-group width-100 padding-top">
     <label class="bold">Lượng user dự kiến sử dụng?</label>
-    <div class="padding8-top">
+    <div class="padding8-top padding-horizontal">
       <mat-radio-group aria-label="Select an option" [(ngModel)]="totalUser">
         <mat-radio-button value="5user">Dưới 5 user</mat-radio-button>
         <mat-radio-button value="10user"> Từ 5 đến 10 user </mat-radio-button>
