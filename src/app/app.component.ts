@@ -43,6 +43,7 @@ export class AppComponent implements OnInit {
         let body = {
           companyName: this.companyName,
           companyEmail: this.companyEmail,
+          companyShortName: this.companyShortName,
           companyAddress: this.companyAddress,
           contactName: this.contactName,
           contactPhone: this.contactPhone,
