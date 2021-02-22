@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   isFacebook = false;
   isWebsite = false;
   isFriends = false;
-  nameFile = "Locy-FORWARDER";
+  nameFile = "LOCY.F";
   totalUser = "5user";
 
   canSubmit = false;
@@ -48,6 +48,7 @@ export class AppComponent implements OnInit {
         let body = {
           companyName: this.companyName,
           companyEmail: this.companyEmail,
+          companyShortName: this.companyShortName,
           companyAddress: this.companyAddress,
           contactName: this.contactName,
           contactPhone: this.contactPhone,
@@ -139,7 +140,7 @@ export class AppComponent implements OnInit {
         this.companyAddress = "";
         this.contactName = "";
         this.contactPhone = "";
-        this.nameFile = "Locy-FORWARDER";
+        this.nameFile = "LOCY.F";
         this.isFacebook = false;
         this.isWebsite = false;
         this.isFriends = false;
