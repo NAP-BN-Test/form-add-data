@@ -15,6 +15,7 @@ import { NgxLoadingModule } from "ngx-loading";
 import { MatRadioModule } from "@angular/material/radio";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [AppComponent, ToastsContainer],
@@ -29,6 +30,7 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
     NgxLoadingModule.forRoot({}),
     BrowserAnimationsModule,
     MatCheckboxModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ToastService } from "./toast-service";
 import { Http } from "@angular/http";
 import * as md5 from "md5";
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: "app-root",
@@ -26,7 +27,11 @@ export class AppComponent implements OnInit {
   canSubmit = false;
   loading = false;
 
-  constructor(public toastService: ToastService, public http: Http) {}
+  constructor(
+    public toastService: ToastService,
+    public http: Http,
+    private spinner: NgxSpinnerService
+  ) {}
 
   ngOnInit() {}
 
@@ -55,34 +60,9 @@ export class AppComponent implements OnInit {
         this.executeRequest(
           body,
           "http://163.44.192.123:3302/trailer/create_company"
-        ).then((data: any) => {
+        ).then(async (data: any) => {
           if (data.status == 1) {
-            this.addDatabase(this.companyShortName);
-
-            setTimeout(() => {
-              this.toastService.show(
-                "Thao tác thành công! Chúng tôi sẽ gửi email cho bạn sớm nhất! Xin vui lòng kiểm tra email để nhận thông tin hướng dẫn sử dụng và cài đặt phần mềm!",
-                { classname: "bg-success text-light" }
-              );
-
-              this.companyName = "";
-              this.companyShortName = "";
-              this.companyEmail = "";
-              this.companyAddress = "";
-              this.contactName = "";
-              this.contactPhone = "";
-              this.nameFile = "Locy-FORWARDER";
-              this.isFacebook = false;
-              this.isWebsite = false;
-              this.isFriends = false;
-              this.totalUser = "5user";
-
-              this.loading = false;
-
-              localStorage.setItem("register", "1");
-
-              grecaptcha.reset();
-            }, 3000);
+            await this.addDatabase(this.companyShortName);
           } else {
             this.loading = false;
             this.toastService.show(data.message, {
@@ -113,8 +93,6 @@ export class AppComponent implements OnInit {
       this.http.post(url, body, {}).subscribe((data: any) => {
         let mData = data.json();
         if (mData) {
-          console.log(mData);
-
           res(mData);
         } else {
           rej([]);
@@ -123,7 +101,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  addDatabase(shortName: string) {
+  async addDatabase(shortName: string) {
+    this.spinner.show();
     let dbName = shortName.toUpperCase() + "_DB",
       username = shortName.toLowerCase() + "_user",
       password = this.genPassword();
@@ -145,10 +124,42 @@ export class AppComponent implements OnInit {
       isFriends: this.isFriends,
       totalUser: this.totalUser,
     };
-    console.log(body);
+    await this.executeRequest(
+      body,
+      "http://163.44.192.123:3303/nap/web_register"
+    ).then((data: any) => {
+      if (data.status == 1) {
+        this.toastService.show(
+          "Đã tạo thành công! Vui lòng kiểm tra thông tin trong email (có thể email trong hòm thư rác)",
+          { classname: "bg-success text-light" }
+        );
+        this.companyName = "";
+        this.companyShortName = "";
+        this.companyEmail = "";
+        this.companyAddress = "";
+        this.contactName = "";
+        this.contactPhone = "";
+        this.nameFile = "Locy-FORWARDER";
+        this.isFacebook = false;
+        this.isWebsite = false;
+        this.isFriends = false;
+        this.totalUser = "5user";
 
-    this.executeRequest(body, "http://163.44.192.123:3303/nap/web_register");
+        this.loading = false;
+
+        localStorage.setItem("register", "1");
+
+        grecaptcha.reset();
+      } else {
+        this.toastService.show(
+          "Tạo không thành công! Vui lòng thực hiện lại.",
+          { classname: "bg-success text-light" }
+        );
+        localStorage.setItem("register", null);
+      }
+    });
     // this.executeRequest(body, 'http://192.168.1.101:3003/nap/web_register');
+    this.spinner.hide();
   }
 
   genRandomCode(spceal?: boolean): string {
