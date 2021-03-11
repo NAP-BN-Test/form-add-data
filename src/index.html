@@ -1,15 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Nam An Phú JSC</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="./assets/img/icon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Nam An Phú JSC</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/x-icon" href="./assets/img/icon.ico" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <app-root></app-root>
+    <!-- Swiper -->
+    <div style="text-align: center">KHÁCH HÀNG TIÊU BIỂU</div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./assets/img/Ant.jpg" alt="" />
+        </div>
+        <div class="swiper-slide"><img src="./assets/img/GL.jpg" alt="" /></div>
+        <div class="swiper-slide">
+          <img src="./assets/img/Hanoi.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/ITS.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/KimPhat.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/Loka.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/LVD.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/MaxSpeed.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/Phoenic.jpg" alt="" />
+        </div>
+        <div class="swiper-slide"><img src="./assets/img/TX.jpg" alt="" /></div>
+        <div class="swiper-slide">
+          <img src="./assets/img/VAT.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/VHG.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/vica.jpg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/img/VietTri.jpg" alt="" />
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div> -->
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        // effect: "coverflow",
+        // grabCursor: true,
+        // centeredSlides: true,
+        // slidesPerView: "auto",
+        // coverflowEffect: {
+        //   rotate: 50,
+        //   stretch: 0,
+        //   depth: 100,
+        //   modifier: 1,
+        //   slideShadows: true,
+        // },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
+        slidesPerView: "auto",
+        loop: true,
+        centeredSlides: true,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
 </html>
