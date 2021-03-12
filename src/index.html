@@ -78,22 +78,24 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper(".swiper-container", {
-        slidesPerView: 13,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: true,
-        },
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+      setTimeout(() => {
+        var swiper = new Swiper(".swiper-container", {
+          slidesPerView: "auto",
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: true,
+          },
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      }, 1000);
     </script>
   </body>
 </html>
