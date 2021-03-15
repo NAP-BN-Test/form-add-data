@@ -21,57 +21,99 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <app-root></app-root>
-    <!-- Swiper -->
-    <div style="text-align: center">KHÁCH HÀNG TIÊU BIỂU</div>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/Ant.jpg" alt="" />
+  <body onload="myFunction()" style="margin: 0">
+    <div id="loader" class="body_loading">
+      <div class="boxes">
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/GL.jpg" alt="" />
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <!-- <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/Hanoi.jpg" alt="" />
-        </div> -->
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/ITS.jpg" alt="" />
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/KimPhat.jpg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/Loka.jpg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/LVD.jpg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/MaxSpeed.jpg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/Phoenic.jpg" alt="" />
-        </div>
-        <!-- <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/TX.jpg" alt="" />
-        </div> -->
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/VAT.jpg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/VHG.jpg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/vica.jpg" alt="" />
-        </div>
-        <div class="swiper-slide">
-          <img class="logo1" src="./assets/img/VietTri.jpg" alt="" />
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
+
+      <!-- dribbble -->
+      <!-- <a
+        class="dribbble"
+        href="https://dribbble.com/shots/5533600-Loading-boxes"
+        target="_blank"
+        ><img
+          src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
+          alt=""
+      /></a> -->
+    </div>
+
+    <div style="display: none" id="myDiv" class="animate-bottom">
+      <app-root></app-root>
+
+      <!-- Swiper -->
+      <div style="text-align: center">KHÁCH HÀNG TIÊU BIỂU</div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/Ant.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/GL.jpg" alt="" />
+          </div>
+          <!-- <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/Hanoi.jpg" alt="" />
+          </div> -->
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/ITS.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/KimPhat.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/Loka.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/LVD.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/MaxSpeed.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/Phoenic.jpg" alt="" />
+          </div>
+          <!-- <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/TX.jpg" alt="" />
+          </div> -->
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/VAT.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/VHG.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/vica.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img class="logo1" src="./assets/img/VietTri.jpg" alt="" />
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
 
     <!-- Swiper JS -->
@@ -95,7 +137,19 @@
             prevEl: ".swiper-button-prev",
           },
         });
-      }, 1000);
+      }, 3000);
+    </script>
+    <script>
+      var myVar;
+
+      function myFunction() {
+        myVar = setTimeout(showPage, 1000);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
     </script>
   </body>
 </html>
