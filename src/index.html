@@ -60,7 +60,10 @@
           alt=""
       /></a> -->
     </div>
-    <app-root></app-root>
+    <div style="display: none" id="myDivRoot" class="animate-bottom">
+      <app-root></app-root>
+    </div>
+
     <div style="display: none" id="myDiv" class="animate-bottom">
       <!-- Swiper -->
       <div style="text-align: center">KHÁCH HÀNG TIÊU BIỂU</div>
@@ -147,6 +150,7 @@
       function showPage() {
         document.getElementById("loader").style.display = "none";
         document.getElementById("myDiv").style.display = "block";
+        document.getElementById("myDivRoot").style.display = "block";
       }
     </script>
   </body>
