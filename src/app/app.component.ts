@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   isFacebook = false;
   isWebsite = false;
   isFriends = false;
+  isZalo = false;
   nameFile = "LOCY.F";
   totalUser = "5user";
 
@@ -56,6 +57,7 @@ export class AppComponent implements OnInit {
           isFacebook: this.isFacebook,
           isWebsite: this.isWebsite,
           isFriends: this.isFriends,
+          isZalo: this.isZalo,
           totalUser: this.totalUser,
         };
         this.executeRequest(
@@ -123,6 +125,7 @@ export class AppComponent implements OnInit {
       isFacebook: this.isFacebook,
       isWebsite: this.isWebsite,
       isFriends: this.isFriends,
+      isZalo: this.isZalo,
       totalUser: this.totalUser,
     };
     await this.executeRequest(
@@ -144,6 +147,7 @@ export class AppComponent implements OnInit {
         this.isFacebook = false;
         this.isWebsite = false;
         this.isFriends = false;
+        this.isZalo = false;
         this.totalUser = "5user";
 
         this.loading = false;
